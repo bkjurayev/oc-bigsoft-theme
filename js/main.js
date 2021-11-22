@@ -36,6 +36,7 @@ const btnConnection = document.querySelector('.connection__btn')
 const connectionForm = document.querySelector('.form')
 const formCancel = document.querySelector('.form__cancel')
 const mdConnection = document.querySelector('.connection__btn-sm')
+
 burger.addEventListener('click', () => {
 	burger.classList.toggle('_active')
 	menuBody.classList.toggle('_active')	

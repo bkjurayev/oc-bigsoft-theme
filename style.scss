@@ -13,9 +13,9 @@ $md4: 479.98;
 
 $mainColor: #3a3a3a;
 $greenColor: #78BB35;
-$greenHoverColor: #71b130;
+$greenHoverColor: #62a321;
 $orangeColor: #FF914D;
-$orangeHoverColor: #f88944;
+$orangeHoverColor: #ff7d2c;
 $grayColor: #8F8F8F;
 
 *,
@@ -93,7 +93,7 @@ h6 {
 	box-shadow: 7px 7px 6px -1px transparent;
 	&:hover {
 		background-color: $orangeHoverColor;
-		box-shadow: 7px 7px 6px -1px rgba(0, 0, 0, .2);
+		box-shadow: 4px 6px 6px -1px rgba(0, 0, 0, .2);
 	}
 	@media (max-width: $md2+px) {
 		font-size: 12px;
@@ -111,7 +111,7 @@ h6 {
 		position: absolute;
 	}
 }
-.title-top {
+.main-title {
 	&__title {
 		font-size: 38px;
 		font-weight: 600;
@@ -143,6 +143,9 @@ h6 {
 	width: 100%;
 	z-index: 10;	
 	position: absolute;	
+	@media (max-width: $md3+px) {
+		position: fixed;
+	}
 	// .header__container
 	&__container {
 		display: flex;	
@@ -211,7 +214,10 @@ h6 {
 			& > a {
 				color: #fff;
 				background-color: $greenColor;				
-			}
+				&:hover {
+					background-color: $greenHoverColor;				
+				}
+			}			
 			@media (max-width: $md3+px) {				
 				margin: 0 0;
 				background-color: #D1EAB8;
@@ -229,14 +235,10 @@ h6 {
 		border-radius: 30px;
 		transition: all 0.3s ease 0s;
 		border: 1px solid transparent;
-		line-height: calc(50 / 20 * 100%);		
+		line-height: calc(50 / 20 * 100%);				
 		&:hover {
-			color: #fff;
-			background-color: $greenHoverColor;					
-		}
-		&:hover {
-			color: $greenColor;
-			border: 1px solid $greenColor;
+			color: $greenHoverColor;
+			border: 1px solid $greenHoverColor;
 		}
 		@media (max-width: $md2+px) {
 			font-size: 14px;
@@ -508,7 +510,7 @@ h6 {
 	input, select, textarea {
 		width: 100%;
 		min-height: 50px;
-		padding: 0 0 0 10px; 
+		padding: 4px 0 0 10px; 
 		border-radius: 7px;
 		border: 2px solid #78BB35;
 		@media (max-height: $md2+px) {
@@ -741,14 +743,29 @@ h6 {
 }	
 // block slock slider
 .slider {
+	height: 338px;
 	margin: 60px 0 0 0;
 	position: relative;
+	@media (max-width: $md2+px) {
+		height: 250px;
+		margin: 50px 0 0 0;
+	}
+	@media (max-width: $md3+px) {
+		height: 200px;
+		margin: 30px 0 0 0;
+	}
+	@media (max-width: $md4+px) {
+		height: 120px;
+		margin: 20px 0 0 0;
+	}
 }
 .slick-list {
+	height: 100%;
 	overflow: hidden;
 	margin: 0 -190px;
 }
 .slick-track {
+	height: 100%;
 	display: flex;
 	align-items: center;
 }
@@ -757,8 +774,10 @@ h6 {
 }
 .slider__item img {
 	width: 90%;
+	height: 100%;
 	display: block;
 	margin: 0 auto;
+	object-fit: contain;
 	transition: all 0.6s ease 0s;
 }
 .slick-center img {
@@ -770,7 +789,12 @@ h6 {
 .slick-dots li button::before {
 	opacity: 1;
 	font-size: 34px;
-	color: $greenColor;
+	color: $greenColor;	
+}
+.slick-dots li button:hover {
+	&::before {
+		top: -4px;
+	}
 }
 .slick-dots .slick-active button {
 	position: absolute;	
@@ -934,12 +958,17 @@ h6 {
 		@media (max-width: $md3+px) {
 			flex: 0 1 40%;
 		}
+		@media (max-width: $md4+px) {
+			flex: 0 1 100%;
+		}
 	}
 	&__bg {
 		img {
 			top: -84px;
 			z-index: -1;
-			// height: 100%;
+			@media (max-width: $md3+px) {
+				top: -25px;
+			}
 		}
 	}
 	&__bottom {
@@ -954,6 +983,13 @@ h6 {
 			font-size: 16px;
 			font-weight: 500;
 		}
+		@media (max-width: $md4+px) {
+			min-height: 38px;
+			margin: 30px 0 0 0;
+			&__content {			
+				font-size: 12px;
+			}
+		}
 	}
 }
 .column-social {	
@@ -963,6 +999,9 @@ h6 {
 	&__subtitle {
 		font-weight: 500;	
 		line-height: 25 / 18 * 100%;
+		@media (max-width: $md2+px) {
+			font-size: 14px;
+		}
 	}
 	&__link {
 		margin: 15px 0 0 0;
