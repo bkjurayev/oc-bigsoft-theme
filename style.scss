@@ -100,6 +100,9 @@ h6 {
 		font-weight: 600;
 		padding: 6px 12px;
 	}
+	@media (max-width: $md4+px) {
+		font-size: 10px;		
+	}
 }
 ._ibg {			
 	img {		
@@ -124,6 +127,11 @@ h6 {
 		}
 		@media (max-width: $md3+px) {
 			font-size: 24px;
+			letter-spacing: 2px;
+			line-height: 55 / 32 * 100%;
+		}
+		@media (max-width: $md4+px) {
+			font-size: 20px;
 			letter-spacing: 2px;
 			line-height: 55 / 32 * 100%;
 		}
@@ -537,6 +545,12 @@ h6 {
 .page {
 	padding: 150px 0 0 0;
 	position: relative;
+	@media (max-width: 700px) {
+		padding: 118px 0 0 0;
+	}
+	@media (max-width: $md4+px) {
+		padding: 70px 0 0 0;
+	}
 }
 //=====================================================================================================
 .main-block {	
@@ -544,17 +558,16 @@ h6 {
 	margin: 0 -15px;
 	@media (max-width: $md2+px) {
 		font-size: 12px;
-	}
-	// .main-block__container
-	&__container {
-
-	}
+	}	
 	// .main-block__body
 	&__body {
 		display: flex;
 		align-items: center;
 		@media (max-width: $md2+px) {
 			flex-wrap: wrap;
+		}
+		@media (max-width: 700px) {
+			flex-direction: column-reverse;
 		}
 	}
 	// .main-block__content
@@ -616,22 +629,28 @@ h6 {
 	margin:  0 0 0 115px; 
 	&__pc-mobile {
 		width: 100%;
+		@media (max-width: 700px) {
+			width: 70%;
+			display: block;
+			margin: 0 auto;
+		}
+		@media (max-width: $md4+px) {
+			width: 85%;			
+		}
 	}
 	@media (max-width: $md2+px) {
-		flex: 0 1 40%;		
+		flex: 1 1 40%;		
 		margin: 0 0 0 60px;
 	}
 	@media (max-width: $md3+px) {
-		flex: 0 1 30%;		
+		flex: 1 1 30%;		
 		margin: 0 0 0 20px;
-	}
+	}		
 }
 //=============================================================================================================
 // .services
 .services {
-	margin: 50px 0 0 0;
-	&__container {}
-	&__title {}
+	margin: 50px 0 0 0;	
 	&__body {
 		display: flex;
 		flex-wrap: wrap;		
@@ -664,7 +683,10 @@ h6 {
 		@media (max-width: $md2+px) {
 			flex-direction: inherit;
 			justify-content: space-around;
-		}		
+		}	
+		@media (max-width: $md4+px) {
+			flex-direction: column;
+		}	
 	}
 	&__btn {
 		margin: 20px 0 75px 0;
@@ -681,6 +703,9 @@ h6 {
 	@media (max-width: $md2+px) {
 		padding: 15px;
 	}
+	@media (max-width: $md4+px) {
+		padding: 0px;
+	}
 	&__img {
 		width: 100%;
 		display: block;
@@ -689,7 +714,11 @@ h6 {
 			width: 60%;
 		}		
 		@media (max-width: $md3+px) {
-			width: 40%;
+			width: 45%;
+			margin: 0 auto;
+		}
+		@media (max-width: $md4+px) {
+			width: 30%;		
 		}		
 	}
 	&__content {
@@ -697,6 +726,9 @@ h6 {
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+		}
+		@media (max-width: $md4+px) {
+			align-items: center;
 		}
 	}
 	&__title {
@@ -744,19 +776,17 @@ h6 {
 // block slock slider
 .slider {
 	height: 338px;
-	margin: 60px 0 0 0;
+	margin: 25px 0 0 0;
 	position: relative;
 	@media (max-width: $md2+px) {
 		height: 250px;
-		margin: 50px 0 0 0;
+		margin: 10px 0 0 0;
 	}
 	@media (max-width: $md3+px) {
-		height: 200px;
-		margin: 30px 0 0 0;
+		height: 200px;		
 	}
 	@media (max-width: $md4+px) {
-		height: 120px;
-		margin: 20px 0 0 0;
+		height: 120px;		
 	}
 }
 .slick-list {
@@ -786,10 +816,18 @@ h6 {
 .slick-dots {
 	position: inherit;
 }
+.slick-dots li {
+	@media (max-width: $md4+px) {
+		width: 12px;
+	}	
+}
 .slick-dots li button::before {
 	opacity: 1;
 	font-size: 34px;
 	color: $greenColor;	
+	@media (max-width: $md4+px) {
+		font-size: 28px;
+	}
 }
 .slick-dots li button:hover {
 	&::before {
@@ -803,6 +841,9 @@ h6 {
 	opacity: 1;
 	font-size: 46px;
 	color: $orangeColor!important;
+	@media (max-width: $md4+px) {
+		font-size: 28px;
+	}
 }
 .slick-arrow {
 	background-color: lightblue;
@@ -816,7 +857,7 @@ h6 {
 	text-align: center;
    padding: 48px 0;
 	@media (max-width: $md2+px) {
-		padding: 30px 0;		
+		// padding: 30px 0;		
 	}
 }
 
@@ -832,22 +873,23 @@ h6 {
 	&__body {
 		display: flex;
 		justify-content: space-between;		 
-		// @media (max-width: $md3+px) {
-		// 	flex-direction: column;
-		// }
+		@media (max-width: $md4+px) {
+			flex-direction: column;
+		}
 	}
 	&__img {
 		flex: 0 0 64%;		
 		@media (max-width: $md3+px) {
 			flex: 0 0 50%;		
+			align-self: center;
 		}
 		img {
 			width: 100%;
-			// @media (max-width: $md3+px) {
-			// 	width: 40%;	
-			// 	display: block;
-			// 	margin: 0 auto;
-			// }
+			@media (max-width: $md4+px) {
+				width: 70%;	
+				display: block;
+				margin: 0 auto;
+			}
 		}
 	}
 	&__content {
@@ -877,10 +919,10 @@ h6 {
 		font-weight: 500;
 		align-items: center;
 		@media (max-width: $md2+px) {
-			font-size: 14px;
+			font-size: 12px;
 		}
 		@media (max-width: $md3+px) {
-			font-size: 12px;
+			font-size: 10px;
 		}
 		img {
 			max-width: 17px;
@@ -898,6 +940,9 @@ h6 {
 		@media (max-width: $md2+px) {
 			margin: 6px 0!important;
 		}
+		@media (max-width: $md4+px) {
+			margin: 10px 0!important;
+		}
 	}
 }
 .content-about > * {
@@ -905,6 +950,11 @@ h6 {
 	line-height: 35 / 18 * 100%;
 	@media (max-width: $md3+px) {
 		margin: 2px 0;
+		line-height: 30 / 18 * 100%;
+	}
+	@media (max-width: $md4+px) {
+		margin: 2px 0;
+		line-height: 20 / 18 * 100%;
 	}
 }
 
@@ -914,6 +964,9 @@ h6 {
 	&__title {
 		margin: 45px 0;
 		text-align: center;
+		@media (max-width: $md3+px) {
+			margin: 25px 0;
+		}
 	}
 	&__body {
 		display: flex;
@@ -922,13 +975,32 @@ h6 {
 	}
 	&__column {
 		display: flex;
-		margin: 10px 0;
-		align-items: center;
 	}
 }
 .col-contact {
+	padding: 10px;
+	margin: 10px 0;
+	align-items: center;
+	@media (max-width: $md3+px) {
+		margin: 0;
+	}
 	&__icon {
 		margin: 0 15px 0 0;
+		@media (max-width: $md2+px) {
+			& {
+				margin: 0 5px 0 0;
+			}
+			img {
+				width: 75%;
+				margin: 0 auto;
+				display: block;
+			}
+		}
+		@media (max-width: $md4+px) {
+			img {
+				width: 40%;
+			}
+		}
 	}
 	&__content {}
 	&__title {
@@ -936,9 +1008,15 @@ h6 {
 		font-weight: 600;
 		letter-spacing: 2;
 		color: $greenColor;
+		@media (max-width: $md3+px) {
+			font-size: 16px;
+		}
 	}
 	&__subtitle {
 		color: $grayColor;
+		@media (max-width: $md3+px) {
+			font-size: 14px;
+		}
 	}
 }
 
