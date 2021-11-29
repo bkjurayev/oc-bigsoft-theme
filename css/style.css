@@ -129,6 +129,7 @@ h6 {
 
 .main-title__subtitle {
   color: #8F8F8F;
+  line-height: 187.5%;
 }
 
 @media (max-width: 991.98px) {
@@ -635,7 +636,7 @@ h6 {
 }
 
 .page {
-  padding: 150px 0 0 0;
+  padding: 150px 0 150px 0;
   position: relative;
 }
 
@@ -682,6 +683,12 @@ h6 {
 .main-block__content {
   flex: 0 1 400px;
   padding: 0 15px;
+}
+
+@media (max-width: 479.98px) {
+  .main-block__content {
+    flex: 0 1 auto;
+  }
 }
 
 .main-block__img {
@@ -1317,6 +1324,7 @@ h6 {
 @media (max-width: 479.98px) {
   .footer__column {
     flex: 0 1 100%;
+    margin: 10px 0 0 0;
   }
 }
 
@@ -1349,7 +1357,7 @@ h6 {
 @media (max-width: 479.98px) {
   .footer__bottom {
     min-height: 38px;
-    margin: 30px 0 0 0;
+    margin: 15px 0 0 0;
   }
   .footer__bottom__content {
     font-size: 12px;
@@ -1371,6 +1379,12 @@ h6 {
   }
 }
 
+@media (max-width: 479.98px) {
+  .column-social__subtitle {
+    font-size: 12px;
+  }
+}
+
 .column-social__link {
   margin: 15px 0 0 0;
 }
@@ -1381,6 +1395,12 @@ h6 {
 
 .column-social__item img {
   max-width: 25px;
+}
+
+@media (max-width: 479.98px) {
+  .column-social__item img {
+    max-width: 20px;
+  }
 }
 
 .footer-menu__link {
@@ -1402,10 +1422,46 @@ h6 {
   color: #FF914D;
 }
 
+@media (max-width: 767.98px) {
+  .column-navigation {
+    display: none;
+  }
+}
+
 .column-services__item {
   font-size: 14px;
   font-weight: 600;
   line-height: 218.75%;
+}
+
+@media (max-width: 479.98px) {
+  .column-services__body {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.6s ease;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .column-services._show .column-services__body {
+    height: 100px;
+    overflow: inherit;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .column-contact__body {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.6s ease;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .column-contact._show .column-contact__body {
+    height: 100px;
+    overflow: inherit;
+  }
 }
 
 .column-contact__item {
@@ -1427,4 +1483,10 @@ h6 {
   font-weight: 600;
   color: #8F8F8F;
   line-height: 275%;
+}
+
+@media (max-width: 479.98px) {
+  .footer-title {
+    line-height: 208.33333%;
+  }
 }

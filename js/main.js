@@ -29,14 +29,20 @@ if (isMobile.any()) {
 } else {
 	document.body.classList.add('_pc')
 }
-
+// header
 const burger = document.querySelector('.menu__icon')
 const menuBody = document.querySelector('.menu__body')
 const btnConnection = document.querySelector('.connection__btn')
 const connectionForm = document.querySelector('.form')
 const formCancel = document.querySelector('.form__cancel')
 const mdConnection = document.querySelector('.connection__btn-sm')
+// footer
+const footerServices = document.querySelector('.column-services')
+const footerServicesTitle = document.querySelector('.column-services__title')
+const footerContact = document.querySelector('.column-contact')
+const footerContactTitle = document.querySelector('.column-contact__title')
 
+// functions header
 burger.addEventListener('click', () => {
 	burger.classList.toggle('_active')
 	menuBody.classList.toggle('_active')	
@@ -54,4 +60,11 @@ formCancel.addEventListener('click', () => {
 })
 mdConnection.addEventListener('click', () => {
 	connectionForm.classList.toggle('_mdActive')
+})
+//functions footer
+footerServicesTitle.addEventListener('click', () => {
+	footerServices.classList.toggle('_show')
+})
+footerContactTitle.addEventListener('click', () => {
+	footerContact.classList.toggle('_show')
 })
