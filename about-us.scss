@@ -11,31 +11,49 @@ $md4: 479.98;
 
 $mainColor: #3a3a3a;
 $greenColor: #78BB35;
-$greenHoverColor: #62a321;
+$greenHoverColor: #6DA932;
 $orangeColor: #FF914D;
-$orangeHoverColor: #ff7d2c;
+$orangeHoverColor: #EF782E;
 $grayColor: #8F8F8F;
+$grayColorHover: #8F8F8F;
 
 // page block
 .page {	
 	min-height: 300px;
-}
-.about-us {
-	&__vector {
-		max-width: 100%;
-		margin: 0 0 55px 0;
+	@media (max-width: $md2+px) {
+		padding: 120px 0 150px 0;
 	}
+	@media (max-width: $md3+px) {
+		padding: 70px 0 150px 0;
+	}
+}
+.about-us {	
 	.block-about {
 		&__body {
 			display: flex;			
 			flex-wrap: wrap;
 			&__item {
 				flex: 0 1 50%;
+				@media (max-width: $md2+px) {
+					flex: 0 1 100%;
+				}
+				@media (max-width: $md4+px) {
+					flex: 0 1 100%;
+				}
 			}	
 			.main-img {			
 				text-align: right;	
+				@media (max-width: $md2+px) {
+					text-align: center;	
+				}
+				@media (max-width: $md4+px) {
+					text-align: center;	
+				}
 				img {
 					max-width: 90%;					
+					@media (max-width: $md2+px) {
+						max-width: 50%;					
+					}
 				}				
 			}		
 		}
@@ -57,8 +75,8 @@ $grayColor: #8F8F8F;
 			img {
 				max-width: 70px;
 				@media (max-width: $md2+px) {
-					max-width: 60%;
-				}
+					max-width: 30%;
+				}				
 			}
 			h1 {
 				font-size: 20px;
@@ -66,6 +84,9 @@ $grayColor: #8F8F8F;
 			}
 			p {
 				color: $grayColor;
+				@media (max-width: $md3+px) {
+					font-size: 12px;
+				}
 			}
 			& > * {
 				margin: 8px 0;
@@ -83,11 +104,27 @@ $grayColor: #8F8F8F;
 	&__content {
 		margin: 50px 0 0 0;
 		display: flex;
+		flex-wrap: wrap;
 		&__item {
 			flex: 0 1 25%;
 			display: flex;
 			align-items: center;
 			flex-direction: column;
+			@media (max-width: $md3+px) {
+				flex: 0 1 50%;
+			}
+			@media (max-width: $md4+px) {
+				flex: 0 1 100%;
+				flex-direction: inherit;
+    			justify-content: center;
+			}		
+			&__bottom {
+				text-align: center;
+				@media (max-width: $md4+px) {
+					text-align: left;
+					padding: 0 0 0 20px;
+				}
+			}	
 			& > * {
 				margin: 6px 0 6px 0;
 			}
@@ -109,6 +146,9 @@ $grayColor: #8F8F8F;
 			color: $grayColor;
 			text-align: center;
 			margin: 12px 0 6px 0;
+			@media (max-width: $md4+px) {
+				text-align: left;
+			}
 		}
 		&__social {			
 			img {

@@ -144,6 +144,13 @@ h6 {
 		}				
 	}
 }
+.vector {
+	max-width: 100%;
+	margin: 0 0 55px 0;
+	@media (max-width: $md3+px) {
+		margin: 0 0 25px 0;
+	}
+}
 
 //=====================================================================================================
 .header {	
@@ -1131,6 +1138,9 @@ h6 {
 		font-size: 14px;
 		font-weight: 600;
 		line-height: 35 / 16 * 100%;				
+		@media (max-width: $md4+px) {
+			font-size: 12px;
+		}
 	}
 	&__body {
 		// height: 100px;		
@@ -1177,6 +1187,12 @@ h6 {
 			max-width: 20px;
 			margin: 0 15px 0 0;
 			object-fit: contain;
+			@media (max-width: $md4+px) {
+				max-width: 16px;
+			}	
+		}		
+		@media (max-width: $md4+px) {
+			font-size: 12px;
 		}
 	}
 }
@@ -1189,6 +1205,7 @@ h6 {
 	line-height: 55 / 20 *100%;
 	// margin: 0 0 25px 0;
 	@media (max-width: $md4+px) {
+		font-size: 16px;
 		line-height: 25 / 12 * 100%;		
 	}
 }

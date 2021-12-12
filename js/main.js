@@ -44,27 +44,35 @@ const footerContactTitle = document.querySelector('.column-contact__title')
 
 // functions header
 burger.addEventListener('click', () => {
-	burger.classList.toggle('_active')
-	menuBody.classList.toggle('_active')	
+	clickToggleClass(burger, '_active')
+	clickToggleClass(menuBody, '_active')	
 	document.querySelector('body').classList.toggle('_lock')
 })
 
 btnConnection.addEventListener('click', () => {
-	connectionForm.classList.toggle('_active')
+	clickToggleClass(connectionForm, '_active')		
 	document.querySelector('body').classList.toggle('_lock')
 })
 formCancel.addEventListener('click', () => {
-	connectionForm.classList.remove('_active')
-	connectionForm.classList.remove('_mdActive')
+	clickRemoveClass(connectionForm, '_active')
+	clickRemoveClass(connectionForm, '_mdActive')	
 	document.querySelector('body').classList.remove('_lock')
 })
 mdConnection.addEventListener('click', () => {
-	connectionForm.classList.toggle('_mdActive')
+	clickToggleClass(connectionForm, '_mdActive')			
 })
 //functions footer
 footerServicesTitle.addEventListener('click', () => {
-	footerServices.classList.toggle('_show')
+	clickToggleClass(footerServices, '_show')				
 })
 footerContactTitle.addEventListener('click', () => {
-	footerContact.classList.toggle('_show')
+	clickToggleClass(footerContact, '_show')					
 })
+
+//==================================================================
+const clickToggleClass = (block, className) => {
+	block.classList.toggle(className)
+}
+const clickRemoveClass = (block, className) => {
+	block.classList.remove(className)
+}

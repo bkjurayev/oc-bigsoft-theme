@@ -1,0 +1,149 @@
+// $fontFamily: "";
+$fontSize: 16;
+
+$minWidth: 320;
+$maxWidth: 1920;
+$maxWidthContainer: 1230;
+$md1: $maxWidthContainer + 12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+$mainColor: #3a3a3a;
+$greenColor: #78BB35;
+$greenHoverColor: #6DA932;
+$orangeColor: #FF914D;
+$orangeHoverColor: #EF782E;
+$grayColor: #8F8F8F;
+$grayColorHover: #8F8F8F;
+
+// page block
+.page {	
+	min-height: 300px;
+	@media (max-width: $md2+px) {
+		padding: 120px 0 150px 0;
+	}
+	@media (max-width: $md3+px) {
+		padding: 70px 0 150px 0;
+	}
+	.our-services {
+		&__title {
+			margin: 0 0 55px 0;
+			text-align: center;
+			@media(max-width: $md2+px) {
+				margin: 0 0 45px 0;
+			}
+		}
+		&__body {}
+		&__top {}
+		&__bottom {}
+		.top-our-services {
+			display: flex;			
+			align-items: center;
+			@media(max-width: $md3+px) {
+				flex-direction: column;
+			}
+			&__item {
+				flex: 0 1 33.333%;								
+			}
+			.left-block {
+				display: flex;
+				align-items: end;
+				flex-direction: column;
+				&__link {
+					padding: 2px 14px;
+					font-weight: 500;	
+					line-height: 35 / 16 * 100%;
+					border-radius: 30px;
+					background-color: transparent;
+					@media (max-width: $md2+px) {
+						font-size: 14px;
+					}
+					&:hover {
+						color: #fff;
+						background-color: $greenColor;
+						transition: all 0.3s ease;
+					}										
+				}
+			}
+			.center-block {
+				&__img {
+					max-width: 70%;
+					margin: 0 auto;
+					display: block;
+				}
+			}
+			.right-block {	
+				padding: 0 85px 0 0;			
+				@media(max-width: $md2+px) {
+					padding: 0 55px 0 0;			
+				}
+				@media(max-width: $md3+px) {
+					padding: 0 5px 0 0;			
+				}
+				h1 {
+					padding: 6px 0 0 0;
+					font-size: 18px;
+					font-weight: 600;
+					line-height: 35 / 16 * 100%;
+				}
+				p {
+					font-size: 14px;
+					line-height: 25 / 14 * 100%;
+					@media(max-width: $md2+px) {
+						font-size: 12px;
+					}
+				}	
+				img {
+					max-width: 12px;
+				}
+				.right-block__tick {					
+					margin: 14px 0;
+					font-size: 14px;
+					font-weight: 500;					
+				}				
+			}
+		}
+		.bottom-our-services {
+			display: flex;
+			margin: 70px 0 0 0;
+			&__item {}
+			.content-block {
+				flex: 0 1 33.333%;
+				padding: 8px 34px;
+				border-radius: 10px;
+				position: relative;
+				border: 2px solid $greenColor;
+				&::before {
+					content: "Контакты";
+					position: absolute;
+					top: -12px;
+					right: 18px;
+					font-weight: 600;
+					font-size: 20px;
+					color: $greenColor;					
+					background-color: #fff;
+				}
+				&__item {
+					display: flex;
+					margin: 26px 0;
+				}
+				&__icon {
+					max-width: 30px;
+					margin: 0 25px 0 0;
+				}
+				&__right {
+					&__title {
+						font-size: 18px;
+						font-weight: 600;
+						color: $greenColor;
+					}
+					&__subtitle {						
+						color: $grayColor;
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}
