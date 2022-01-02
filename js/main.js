@@ -76,3 +76,4 @@ const clickToggleClass = (block, className) => {
 const clickRemoveClass = (block, className) => {
 	block.classList.remove(className)
 }
+window.addEventListener('click', (event) => {console.log(event.target)})

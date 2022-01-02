@@ -202,16 +202,33 @@ h6 {
 	display: flex;
 	align-items: center;
 	&__body {		
-		transition: all 0.5s ease 0s;
 		@media (max-width: $md3+px) {				
 			position: fixed;
-			top: 0;
+			top: -100%;
 			left: 0;
 			width: 100%;			
-			height: 0%;			
-			display: block;
+			height: 100%;						
 			overflow: auto;				
-			padding: 0px 0 0 0px;									
+			padding: 70px 0 0 0;									
+			background-color: #fff;		
+			transition: top 0.5s ease 0s;
+			&::before {		
+				content: "";
+				top: 0;
+				left: 0;
+				width: 100%;
+				min-height: 70px;
+				position: fixed;
+				background-color: #fff;				
+			}
+		}
+		@media (max-width: $md4+px) {
+			&::before {		
+				min-height: 52px;
+			}
+			&._active {
+				padding: 52px 0 0 0;									
+			}			
 		}
 	}
 	// .menu_list
@@ -225,7 +242,9 @@ h6 {
 	}
 	// .menu_item
 	&__item {
-		margin: 0 3px;
+		@media (min-width: $md3+px) {
+			margin: 0 3px;
+		}	
 		&.active {
 			& > a {
 				color: #fff;
@@ -242,7 +261,7 @@ h6 {
 					background-color: transparent;
 				}
 			}
-		}	
+		}
 	}
 	// .menu_link
 	&__link {
@@ -251,10 +270,12 @@ h6 {
 		border-radius: 30px;
 		transition: all 0.3s ease 0s;
 		border: 1px solid transparent;
-		line-height: calc(50 / 20 * 100%);				
-		&:hover {
-			color: $greenHoverColor;
-			border: 1px solid $greenHoverColor;
+		line-height: calc(50 / 20 * 100%);						
+		@media (min-width: $md3+px) {
+			&:hover {
+				color: $greenHoverColor;
+				border: 1px solid $greenHoverColor;
+			}
 		}
 		@media (max-width: $md2+px) {
 			font-size: 14px;
@@ -263,38 +284,11 @@ h6 {
 	}	
 	// menu burger
 	&__body._active {		
-		height: 100%;
-		padding: 100px 0 0 0px;				
-		background-color: #fff;		
-	}
-	&__body::before {		
-		content: "";
-		top: 0;
-		left: 0;
-		width: 100%;
-		min-height: 0px;
-		position: fixed;
-		background-color: #fff;				
-	}
+		top: 0;		
+	}	
 	&__body._active::before {		
 		box-shadow: -2px 1px 6px rgba(0,0,0,0.1);		
-	}
-	@media (max-width: $md3+px) {		
-		&__body::before {		
-			min-height: 70px;
-		}	
-		&__body._active {	
-			padding: 70px 0 0 0px;				
-		}	
-	}
-	@media (max-width: $md4+px) {
-		&__body::before {		
-			min-height: 52px;
-		}	
-		&__body._active {	
-			padding: 52px 0 0 0px;				
-		}	
-	}
+	}		
 	&__icon {
 		z-index: 5;
 		width: 30px;
@@ -343,12 +337,12 @@ h6 {
 		}
 		&._active {
 			&::before {
-				top: 37%;
+				top: 50%;
 				transform: rotate(-45deg) translate(0px, -50%);
 			}
 			&::after {
-				bottom: 52%;
-				transform: rotate(45deg) translate(1px, -50%);
+				bottom: 50%;
+				transform: rotate(45deg) translate(0px, 50%);
 			}
 		}
 	}	
@@ -394,7 +388,7 @@ h6 {
 	top: inherit;
 	left: 20px;
 	bottom: 0;
-	height: 80%;
+	height: 65%;
 	width: 35%;	
 	border-radius: 0 30px 0 0;
 	@media (max-width: $md2+px) {
@@ -429,7 +423,7 @@ h6 {
 	left: 0;
 	width: 100%;
 	height: 0%;
-	z-index: 10;	
+	z-index: 10;		
 	box-shadow: 2px -2px 0px rgba(0,0,0,0.1);
 	background-color: rgba(209, 234, 184, 0.5);
 	&__container {
@@ -448,7 +442,7 @@ h6 {
 		text-align: center;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: flex-start;
 		background-color: #fff;		
 	}
 	&__btn-top {
@@ -530,7 +524,7 @@ h6 {
 		border-radius: 7px;
 		border: 2px solid #78BB35;
 		@media (max-height: $md2+px) {
-			min-height: 35px;
+			min-height: 50px;
 		}
 	}
 	textarea {
@@ -1228,4 +1222,17 @@ h6 {
 	// @include adaptiv-value("padding", 80, 30, 1);
 	// .title {
 	// 	margin: 0px 0px 16px/24px * 1em 0; 
+	// }
+
+	// @media (any-hover: hover) {
+	// 	&:hover {
+	// 		color: #fff;
+	// 	}
+	// }
+
+	// .title {
+	// 	@include adaptiv-value("font-size", 28, 22, 1);
+	// 	font-weight: 500;
+	// 	line-height: 120%;
+	// 	margin: 0px 0px 4px/28px * 1em 0px;
 	// }

@@ -218,20 +218,35 @@ h6 {
   align-items: center;
 }
 
-.menu__body {
-  transition: all 0.5s ease 0s;
-}
-
 @media (max-width: 767.98px) {
   .menu__body {
     position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 70px 0 0 0;
+    background-color: #fff;
+    transition: top 0.5s ease 0s;
+  }
+  .menu__body::before {
+    content: "";
     top: 0;
     left: 0;
     width: 100%;
-    height: 0%;
-    display: block;
-    overflow: auto;
-    padding: 0px 0 0 0px;
+    min-height: 70px;
+    position: fixed;
+    background-color: #fff;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .menu__body::before {
+    min-height: 52px;
+  }
+  .menu__body._active {
+    padding: 52px 0 0 0;
   }
 }
 
@@ -247,8 +262,10 @@ h6 {
   }
 }
 
-.menu__item {
-  margin: 0 3px;
+@media (min-width: 767.98px) {
+  .menu__item {
+    margin: 0 3px;
+  }
 }
 
 .menu__item.active > a {
@@ -280,9 +297,11 @@ h6 {
   line-height: calc(50 / 20 * 100%);
 }
 
-.menu__link:hover {
-  color: #62a321;
-  border: 1px solid #62a321;
+@media (min-width: 767.98px) {
+  .menu__link:hover {
+    color: #62a321;
+    border: 1px solid #62a321;
+  }
 }
 
 @media (max-width: 991.98px) {
@@ -293,41 +312,11 @@ h6 {
 }
 
 .menu__body._active {
-  height: 100%;
-  padding: 100px 0 0 0px;
-  background-color: #fff;
-}
-
-.menu__body::before {
-  content: "";
   top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 0px;
-  position: fixed;
-  background-color: #fff;
 }
 
 .menu__body._active::before {
   box-shadow: -2px 1px 6px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 767.98px) {
-  .menu__body::before {
-    min-height: 70px;
-  }
-  .menu__body._active {
-    padding: 70px 0 0 0px;
-  }
-}
-
-@media (max-width: 479.98px) {
-  .menu__body::before {
-    min-height: 52px;
-  }
-  .menu__body._active {
-    padding: 52px 0 0 0px;
-  }
 }
 
 .menu__icon {
@@ -388,13 +377,13 @@ h6 {
 }
 
 .menu__icon._active::before {
-  top: 37%;
+  top: 50%;
   transform: rotate(-45deg) translate(0px, -50%);
 }
 
 .menu__icon._active::after {
-  bottom: 52%;
-  transform: rotate(45deg) translate(0px, -50%);
+  bottom: 50%;
+  transform: rotate(45deg) translate(0px, 50%);
 }
 
 .connection__btn {
@@ -443,7 +432,7 @@ h6 {
   top: inherit;
   left: 20px;
   bottom: 0;
-  height: 80%;
+  height: 65%;
   width: 35%;
   border-radius: 0 30px 0 0;
 }
@@ -515,7 +504,7 @@ h6 {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   background-color: #fff;
 }
 
@@ -627,7 +616,7 @@ h6 {
 
 @media (max-height: 991.98px) {
   .form input, .form select, .form textarea {
-    min-height: 35px;
+    min-height: 50px;
   }
 }
 
